@@ -1,11 +1,10 @@
-{% set provider= "CloudFlare" %}
+{% set provider = "CloudFlare" %}
 {% set version = "1.0.0" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
 {% set sha256 = "270c523525b94f245f4fc0cc6bb4b3ca134bf05a1fb9c92e9833b1291cec310f" %}
-{% set sha256_win32 = "cfe8c549310f4d66716b46bc79088467f2e6de86c9f03fb5d9ac203642783b98" %}
 {% set sha256_win64 = "1d4b6dcf4099e6a5e61fb7bb490de5874029f2ff71315fb01f849c2846d15e0f" %}
 
 package:
@@ -14,13 +13,9 @@ package:
 
 source:
   url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
   sha256: {{ sha256 }}  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]
   url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-  fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: {{ sha256_win32 }}  # [win32]
   sha256: {{ sha256_win64 }}  # [win64]
 
 build:
@@ -46,7 +41,7 @@ about:
   license: MPL 2.0
   summary: The Terraform {{ provider }} provider
   doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html
-  dev_url: https://https://github.com/terraform-providers/{{ name }}
+  dev_url: https://github.com/terraform-providers/{{ name }}
 
 extra:
   recipe-maintainers:
