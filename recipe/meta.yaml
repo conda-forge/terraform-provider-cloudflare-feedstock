@@ -1,5 +1,5 @@
 {% set provider = "CloudFlare" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
@@ -11,10 +11,10 @@ package:
 source:
   - folder: src/github.com/terraform-providers/{{ name|lower }}
     url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-    sha256: 5faa2123acb6df3c3e16e910d0c61498be60967e8f47edaec6bb08e4f53ee6f9  # [not win]
+    sha256: 1e2725e7df9e0e1b82a03650804f8786f6c6539ea08f18aa6f900be9773a8592  # [not win]
 
     url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    sha256: de444572de83863ae26d19ebed7dee2d38a4b4da276f51942ed66b10469d5885  # [win64]
+    sha256: e0fef043b135d62463688ae21e5046e24b53cbbdfb9d950f23f8f402743192e1  # [win64]
 
 build:
   number: 0
