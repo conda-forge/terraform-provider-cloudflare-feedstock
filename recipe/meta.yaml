@@ -1,6 +1,6 @@
 {% set provider = "CloudFlare" %}
 {% set goname = "github.com/terraform-providers/terraform-provider-"+provider.lower() %}
-{% set version = "1.9.0" %}
+{% set version = "1.10.0" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -14,11 +14,11 @@ package:
 source:
   - folder:  {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 52f80908933171de5650ee8072ef7136634a389dc01a9ee1fc8a8431f1ce3b14
+    sha256: 3e52d5d2be746599732acddab36bcee8d31c005bf197ce0ff65314a97b2c96bf
 
 
 build:
-  number: 1
+  number: 0
   script:
     - pushd {{ pkg_src }}
     - go build -v -o $GOBIN/{{ x4_plugin }} .  # [unix]
